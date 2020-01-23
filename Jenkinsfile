@@ -15,7 +15,7 @@ pipeline{
 		    junit '**/target/surefire-reports/*'
 		}
 		failure {
-		    mail to: agrawalrohant@gmail.com, subject: 'The Pipeline failed :('
+		    echo 'Oh.. no! The Pipeline failed :('
 		}
     }
 }
