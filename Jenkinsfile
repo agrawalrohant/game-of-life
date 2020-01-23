@@ -3,7 +3,7 @@ pipeline{
 	stages {
 		stage ('Build'){
 			steps {
-				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+				echo "Running Job Build # ${env.BUILD_ID} on URL ${env.JENKINS_URL}"
 				bat 'mvn clean package'
 				archiveArtifacts artifacts: '**/target/*.jar,**/target/*.war', fingerprint: true
 			}
