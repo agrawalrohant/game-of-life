@@ -8,5 +8,12 @@ pipeline{
 				archiveArtifacts artifacts: '**/target/*.jar,**/target/*.war', fingerprint: true
 			}
 		}
+		stage ('Test'){
+			steps{
+				echo 'Running Test now ....'
+				bat 'mvn test'
+				junit '**/target/*.xml'
+			}
+		}
 	}
 }
