@@ -3,21 +3,15 @@ pipeline{
 	stages {
 		stage ('Build'){
 			steps {
-				echo 'build...'
-				bat 'mvn clean build'
+				echo 'Running Build now ....'
+				bat 'mvn clean package'
+				archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 			}
 		}
 		stage ('Test'){
 			steps{
-				echo 'test....'
+				echo 'Running Test now ....'
 				junit '**/target/*.xml'
-			}
-		}
-		stage ('Package'){
-			steps{
-				echo 'package....'
-				bat 'mvn clean package'
-				archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 			}
 		}
 	}
