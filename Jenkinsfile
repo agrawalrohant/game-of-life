@@ -11,7 +11,7 @@ pipeline{
 		stage ('Test'){
 			steps{
 				echo 'Running Test now ....'
-				junit '**/target/surefire/*.xml'
+				junit '**/target/surefire-reports/*.xml'
 			}
 		}
 	}
