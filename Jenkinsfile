@@ -4,7 +4,8 @@ pipeline{
 		stage ('package'){
 			steps{
 				echo 'package....'
-				sh 'mvn clean package'
+				bat 'mvn clean package'
+				archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 			}
 		}
 	}
