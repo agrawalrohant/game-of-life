@@ -4,7 +4,7 @@ pipeline{
 		stage ('Build'){
 			steps {
 				echo 'build...'
-				bat 'make 
+				bat 'make'
 				bat mvn clean build
 			}
 		}
