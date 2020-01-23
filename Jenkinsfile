@@ -12,7 +12,7 @@ pipeline{
 	post {
 		always {
 			echo "Scanning Test Results for # ${env.BUILD_ID} on URL ${env.JENKINS_URL}"
-		    junit '**/target/surefire-reports/*'
+		    junit '**/target/surefire-reports/*.xml'
 		}
 		failure {
 		    echo 'Oh.. no! The Pipeline failed :('
