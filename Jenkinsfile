@@ -5,7 +5,7 @@ pipeline{
 			steps {
 				echo 'Running Build now ....'
 				bat 'mvn clean package'
-				archiveArtifacts artifacts: '**/target/*.jar **/target/*.war', fingerprint: true
+				archiveArtifacts artifacts: '**/target/*.jar,**/target/*.war', fingerprint: true
 			}
 		}
 	}
